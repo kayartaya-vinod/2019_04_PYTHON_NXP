@@ -2,6 +2,37 @@
 
 By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
 
+
+<a name="toc">
+
+### Table of contents
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#hello_python">Hello, Python</a></li>
+<li><a href="#variables_in_python">Variables in Python</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#selection_construct">Selection construct</a></li>
+<li><a href="#using_loops">Using loops</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#tuples">Tuples</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#function_arguments">Function arguments</a></li>
+<li><a href="#class_and_objects">Class and objects</a></li>
+<li><a href="#inheritance">Inheritance</a></li>
+<li><a href="#exception_handling">Exception handling</a></li>
+<li><a href="#raising_exceptions">Raising exceptions</a></li>
+<li><a href="#regular_expressions">Regular expressions</a></li>
+<li><a href="#modules_and_packages">Modules and packages</a></li>
+<li><a href="#list_tricks">List tricks</a></li>
+</ul>
+
+<a href="#toc">[Back to TOC]</a><br><br>
+<a name="overview">
+
+
 ## Check out my courses on Udemy
 
 <table>
@@ -61,35 +92,6 @@ By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
 </tr>
 </table>
 
-
-<a name="toc">
-
-### Table of contents
-
-<ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#hello_python">Hello, Python</a></li>
-<li><a href="#variables_in_python">Variables in Python</a></li>
-<li><a href="#strings">Strings</a></li>
-<li><a href="#selection_construct">Selection construct</a></li>
-<li><a href="#using_loops">Using loops</a></li>
-<li><a href="#lists">Lists</a></li>
-<li><a href="#tuples">Tuples</a></li>
-<li><a href="#sets">Sets</a></li>
-<li><a href="#dictionaries">Dictionaries</a></li>
-<li><a href="#functions">Functions</a></li>
-<li><a href="#function_arguments">Function arguments</a></li>
-<li><a href="#class_and_objects">Class and objects</a></li>
-<li><a href="#inheritance">Inheritance</a></li>
-<li><a href="#exception_handling">Exception handling</a></li>
-<li><a href="#raising_exceptions">Raising exceptions</a></li>
-<li><a href="#regular_expressions">Regular expressions</a></li>
-<li><a href="#modules_and_packages">Modules and packages</a></li>
-<li><a href="#list_tricks">List tricks</a></li>
-</ul>
-
-<a href="#toc">[Back to TOC]</a><br><br>
-<a name="overview">
 
 ## Overview
 
