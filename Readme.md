@@ -50,7 +50,7 @@ By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
         <img src="https://vinod.co/assets/images/udemy/learn-react-and-redux-by-examples.jpeg">
         </a>
         <center>
-        <strong>Learn React and Redux by examples</strong>
+        <strong>React and Redux</strong>
         </center>
     </td>
     <td>
@@ -58,7 +58,7 @@ By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
         <img src="https://vinod.co/assets/images/udemy/build-awesome-web-apps-using-angular7.jpeg">
         </a>
         <center>
-        <strong>Build awesome web apps using Angular 7</strong>
+        <strong>Angular 7</strong>
         </center>
     </td>
 
@@ -69,7 +69,7 @@ By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
         <img src="https://vinod.co/assets/images/udemy/develop-restful-java-web-services-using-jaxrs-and-jersey.jpeg">
         </a>
         <center>
-        <strong>Develop RESTful Java web services using JAX-RS and Jersey</strong>
+        <strong>RESTful Java web services</strong>
         </center>
     </td>
     <td>
@@ -85,7 +85,7 @@ By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
         <img src="https://vinod.co/assets/images/udemy/hibernate-orm-a-quick-start-guide.jpeg">
         </a>
         <center>
-        <strong>Hibernate ORM - a quick start guide</strong>
+        <strong>Hibernate - a quick start guide</strong>
         </center>
     </td>
 
