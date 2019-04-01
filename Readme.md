@@ -9,13 +9,11 @@ By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
         <img src="https://vinod.co/assets/images/udemy/mongodb-fundamentals.jpeg">
         </a>
     </td>
-
     <td>
         <a href="https://www.udemy.com/learn-react-and-redux-by-examples/?couponCode=VINODCO" target="_blank">
         <img src="https://vinod.co/assets/images/udemy/learn-react-and-redux-by-examples.jpeg">
         </a>
     </td>
-
     <td>
         <a href="https://www.udemy.com/build-awesome-web-apps-using-angular-7/?couponCode=VINODCO" target="_blank">
         <img src="https://vinod.co/assets/images/udemy/build-awesome-web-apps-using-angular7.jpeg">
@@ -29,13 +27,11 @@ By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
         <img src="https://vinod.co/assets/images/udemy/develop-restful-java-web-services-using-jaxrs-and-jersey.jpeg">
         </a>
     </td>
-
     <td>
         <a href="https://www.udemy.com/angular-7-a-quick-start-guide/?couponCode=VINODCO" target="_blank">
         <img src="https://vinod.co/assets/images/udemy/angular-7-quick-start.jpeg">
         </a>
     </td>
-
     <td>
         <a href="https://www.udemy.com/hibernate-orm-a-quick-start-guide/?couponCode=VINODCO" target="_blank">
         <img src="https://vinod.co/assets/images/udemy/hibernate-orm-a-quick-start-guide.jpeg">
