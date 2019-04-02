@@ -1,5 +1,7 @@
 # Python training @ NXP
 
+## Short URL for this page http://bit.ly/2I5wyX9
+
 By <a href="https://vinod.co/view/whoami"><b>Vinod Kumar Kayartaya</b></a>
 
 
