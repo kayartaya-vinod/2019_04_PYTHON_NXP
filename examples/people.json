@@ -1,0 +1,72 @@
+[
+   {
+      "id": "1",
+      "name": "Bond Spreadbury",
+      "email": "bspreadbury0@de.vu",
+      "gender": "Male",
+      "phone": "967-232-8817"
+   },
+   {
+      "id": "2",
+      "name": "Noni Laird-Craig",
+      "email": "nlairdcraig1@imdb.com",
+      "gender": "Female",
+      "phone": "376-815-1092"
+   },
+   {
+      "id": "3",
+      "name": "Brewer Berkelay",
+      "email": "bberkelay2@smugmug.com",
+      "gender": "Male",
+      "phone": "362-556-3335"
+   },
+   {
+      "id": "4",
+      "name": "Humfried Brumfield",
+      "email": "hbrumfield3@java.com",
+      "gender": "Male",
+      "phone": "321-149-1231"
+   },
+   {
+      "id": "5",
+      "name": "Raoul Bampton",
+      "email": "rbampton4@theguardian.com",
+      "gender": "Male",
+      "phone": "504-526-6348"
+   },
+   {
+      "id": "6",
+      "name": "Ignatius Gherardi",
+      "email": "igherardi5@merriam-webster.com",
+      "gender": "Male",
+      "phone": "393-252-0357"
+   },
+   {
+      "id": "7",
+      "name": "Prescott Beeson",
+      "email": "pbeeson6@fema.gov",
+      "gender": "Male",
+      "phone": "811-227-7904"
+   },
+   {
+      "id": "8",
+      "name": "Adele Ragge",
+      "email": "aragge7@dailymotion.com",
+      "gender": "Female",
+      "phone": "862-651-0642"
+   },
+   {
+      "id": "9",
+      "name": "Marney Gerasch",
+      "email": "mgerasch8@theglobeandmail.com",
+      "gender": "Female",
+      "phone": "451-333-1725"
+   },
+   {
+      "id": "10",
+      "name": "Zarla Nuton",
+      "email": "znuton9@printfriendly.com",
+      "gender": "Female",
+      "phone": "342-305-9851"
+   }
+]
