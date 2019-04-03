@@ -9,8 +9,8 @@ def multiplication_table(num):
         print("{} * {} --> {}".format(num, i, num*i))
         i += 1
 
-def line(xyz):
-    print(xyz * 50)
+def line(chr = '.'):
+    print(chr * 50)
 
 def factorial(num):
     f = 1
@@ -19,6 +19,7 @@ def factorial(num):
         num = num -1  # num -= 1
         # print('f = {}, num = {}'.format(f, num))
     return f
+
 
 def main():
     num = int(input('Enter a number: '))
