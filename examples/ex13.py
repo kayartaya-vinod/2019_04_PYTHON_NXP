@@ -33,7 +33,7 @@ def test4(a, b=10, *args, **kwargs):
     print('b =', b)
     print('args =', args)
     print('kwargs =', kwargs)
-    print()
+    print() 
 
 def main():
     test4(100)
