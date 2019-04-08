@@ -108,8 +108,20 @@ def json2csv(filename):
         rows.insert(0, header)
         with open('output.csv', 'w') as outfile: outfile.writelines(rows)
 
+def fibo(count = 10):
+    a, b = -1, 1
+    for i in range(count):
+        c = a + b
+        yield c
+        a, b = b, c
 
 def main():
+    for i in fibo(20):
+        print(i, end=', ')
+    print()
+
+
+def main_1():
     try:
         c1 = Calendar()
         if len(sys.argv) > 1:
