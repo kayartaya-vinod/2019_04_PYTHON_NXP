@@ -1975,127 +1975,218 @@ $
 <a name="regular_expressions">
 
 ## Regular expressions
+Regular expression is a powerful language feature in Python for matching text patterns and has become a standard for of searching, replacing, and parsing text with complex patterns of characters.
 
+Using a regular expression, many complex lines of coding can be reduced to one liners. Because of its power, often regular expressions are used in text editors, compilers and interpreters. 
 
-We can use the `raise` keyword to report an erroneous situation to Python. This way a function can communicate to the caller of the function that there was a runtime error.
+General uses of regular expressions include:
 
-For example, given this function:
+* Search a part of the string in a bigger string (search and match)
+* Replace parts of the string (sub)
+* Break a string into small pieces (split)
 
-```python
-def factorial(num=1):
-    f = 1
-    for n in range(num, 1, -1):
-        f *= n
-    return f
-```
-
-When we call the function with a positive number, 
+The `re` is a built in module in Python, and it has to be imported, before it can be used:
 
 ```python
-num = 5
-fact = factorial(num)
-print("factorial of %d is %d" % (num, fact))
-```
-we do get the output properly:
-
-```
-factorial of 5 is 120
+import re
 ```
 
-However, when we supply a negative number, the function returns 1.
+Following are special characters and notations used with regular expressions.
 
-```
-factorial of -2 is 1
-```
+* Alternative `|`
+* Grouping `[]`
+* Quantification `?*+{n,m}`
+* Anchors `^$`
+* Meta characters `.[][-][^]`
+* Escape character classes `\d\s\w`
 
-If we want to report to the caller of the function that negative numbers are not allowed, `raise` comes to our rescue.
-
-Here is the modified version of the function factorial:
+<p class='lead'>Alternative</p>
 
 ```python
-def factorial(num=1):
-    if num<0:
-        raise ValueError("Negative numbers are not allowed!")
-    f = 1
-    for n in range(num, 1, -1):
-        f *= n
-    return f
+"cat|dog" # "cat" or "dog"
+"vinod|kumar" # "vinod" or "kumar"
 ```
 
-and the output when we supply `-2`:
-
-```
-$ python exceptions4.py 
-Traceback (most recent call last):
-  File "exceptions4.py", line 10, in <module>
-    fact = factorial(num)
-  File "exceptions4.py", line 3, in factorial
-    raise ValueError("Negative numbers are not allowed!")
-ValueError: Negative numbers are not allowed!
-$ 
-```
-
-At times, we may not be able to use the built-in error classes. For example, if a function receives a variable representing `age`, it make sense to raise `InvalidAgeError` instead of `ValueError`. However, there is no such class called `InvalidAgeError`. To create one such class, we can create a derived class from one of the built-in error classes.
+<p class='lead'>Grouping</p>
 
 ```python
-class InvalidAgeError(Exception):
-    def __init__(self, message="Invalid age. Must be >0 and <120"):
-        self.message = message
-
-    def __str__(self):
-        return self.message
+"(G|M)ary" # "Gary" or "Mary"
+"Vi(nod|j(ay|et))" # "Vinod" or "Vijay" or "Vijet"
 ```
 
-Notice that we are overriding dunder method `__str__` which simply represents the textual version of the exception object. This is automatically called when the exception is raised.
+<p class='lead'></p>
+Following special characters represent multiplicity of the preceding element:
+
+* ? `zero or one of the preceding element`
+* \* `zero or more of the preceding element`
+* \+ `one or more of the preceding element`
+* {m,n} `m to n times of the preceding element`
 
 ```python
-class Person(object):
-    def __init__(self, name="", age=20):
-        if(age<0 or age>120):
-            raise InvalidAgeError()
+"vinodh?" # "vinod" or "vinodh"
+"colou?r" # "color" or "colour"
 
-        self.__name = name
-        self.__age = age
+"fo*ot" # "fot" or "foot" or "fooot" or "foooooooooot" etc
+"120*5" # "1205" or "12005" or "1200005" etc
 
-    def info(self):
-        print("Name = %s" % self.__name)
-        print("Age = %d" % self.__age)
+"ama+n" # "aman" or "amaan" or "amaaan" or "amaaaan" etc
+"12+34" # "1234" or "12234" or "12222222234" etc
+
+"go{2,4}gle" # google or "gooogle" or "goooogle"
+"9{3}" # "999"
+"z{2,}" # "zz" or "zzz" or "zzzz" or "zzzzz" ....
 ```
 
-In the constructor function of the `class Person`, we check if the user passes a proper value for the `age` or not. If the user supplies a wrong value, we create an object of `InvalidAgeException` and raise the same. The exception is received at the code that invoked the constructor.
+<p class='lead'>Anchors</p>
+
+* ^ `matches the starting position with in the string`
+* $ `matches the ending position with in the string`
 
 ```python
-p1 = Person("Jane Doe", -12)
-p1.info()
+"^obje" # "object" or "objective" or "object oriented" etc
+"^2017" # "2017" or "2017/01/20"
+
+"gram$" # "program" or "telegram" or "kilogram" etc
+"2017$" # "2017" or "2010-2017" or "20/01/2017" etc
 ```
 
-```
-Traceback (most recent call last):
-  File "exceptions5.py", line 24, in <module>
-    p1 = Person("Jane Doe", -12)
-  File "exceptions5.py", line 11, in __init__
-    raise InvalidAgeError()
-__main__.InvalidAgeError: Invalid age. Must be >0 and <120
-```
+<p class='lead'>Meta-characters</p>
 
-The calling code may be enclosed in a `try-except` block to handle the erroneous situation:
+* \. `matches any single character`
+* [] `matches a single character that is contained with in the brackets`
+* [ - ] `matches a single character that is contained within the brackets and the specified range`
+* [^ ] `matches a single character that is not contained within the brackets`
 
 ```python
-try:
-    p1 = Person("Jane Doe", -12)
-    p1.info()
-except Exception as ex:
-    print("There was an error while creating the Person object: ")
-    print(ex)
+"cat." # "cat" or "cats" or "caty" or "cate" or any 4 letter words that start with "cat"
+"12.4" # "124" or "1234" or "12a3" etc
+
+"[abc]" # "a" or "b" or "c"
+"[aeiou]" # any vowel
+"[1234567890]" # any digit
+
+"[a-d]" # "a" or "b" or "c" or "d"
+"[a-zA-Z]" # all alphabets lowercase or uppercase
+"[0-9]" # all digits
+
+"[^aeiouAEIOU]" # any non-vowel characters 
+"[^0-9]" # any non-digit
+"[^abc]" # any character, but not "a", "b", or "c"
 ```
 
-```
-$ python exceptions5.py 
-There was an error while creating the Person object: 
-Invalid age. Must be >0 and <120
-$ 
+<p class='lead'>Escape character classes</p>
+
+The Escape character classes specify a group of characters to match in a string
+
+* \d - Matches a decimal digit [0-9]
+* \D - Matches non digits
+* \s - Matches a single white space  character [\t-tab, \n-newline, \r-return, \v-space, \f-form]
+* \S  - Matches any non-white space character
+* \w - Matches alphanumeric character class ([a-zA-Z0-9_])
+* \W - Matches non-alphanumeric character class ([^a-zA-Z0-9_])
+* \w+ - Matches one or more words / characters
+* \b - Matches word boundaries when outside brackets. atches backspace  when inside brackets
+* \B - Matches nonword boundaries 
+* \A  - Matches beginning of string
+* \z - Matches end of string
+
+### The `re` module
+
+provides the following useful functions:
+
+* compile
+    * Compile a regular expression pattern into a regular expression object, which can be used for matching using its match() and search() methods. The expression's behaviour can be modified by specifying a flag value. 
+* findall
+    * Return all non-overlapping matches of pattern in string, as a list of strings. The string is scanned left-to-right, and matches are returned in the order found. If one or more groups are present in the pattern, return a list of groups; this will be a list of tuples if the pattern has more than one group. Empty matches are included in the result unless they touch the beginning of another match.
+* finditer
+    * Return an iterator yielding MatchObject instances over all non-overlapping matches for the RE pattern in string. The string is scanned left-to-right, and matches are returned in the order found. Empty matches are included in the result unless they touch the beginning of another match.
+* match
+    * If zero or more characters at the beginning of string match the regular expression pattern, return a corresponding MatchObject instance. Return None if the string does not match the pattern; note that this is different from a zero-length match. Note that even in MULTILINE mode, re.match() will only match at the beginning of the string and not at the beginning of each line. If you want to locate a match anywhere in string, use search() instead.
+* purge
+    * Clear the regular expression cache.
+* search
+    * Scan through string looking for the first location where the regular expression pattern produces a match, and return a corresponding MatchObject instance. Return None if no position in the string matches the pattern; note that this is different from finding a zero-length match at some point in the string.
+* split
+    Split string by the occurrences of pattern. If capturing parentheses are used in pattern, then the text of all groups in the pattern are also returned as part of the resulting list. 
+* sub
+    * Return the string obtained by replacing the leftmost non-overlapping occurrences of pattern in string by the replacement string. If the pattern isn’t found, string is returned unchanged. The replacement string can be an actual string or a function that returns string; if it is a string, any backslash escapes in it are processed. That is, \n is converted to a single newline character, \r is converted to a carriage return, and so forth. Unknown escapes such as \j are left alone. 
+
+---
+    
+<p class='lead'>Try these examples: </p>
+
+**Search the given tokens in a sentence.**
+
+```python
+import re	
+sentence = "Here is the First Regular Expression Program"
+tokens = [ "first", "hello", "world", "program"]
+
+for token in tokens:
+    print("Searching for '%s' in '%s' ->" % (token, sentence), end="")
+    if re.search(token, sentence, re.I):
+        print("Yes! found it.")
+    else:
+        print("Not found :-(")
 ```
 
+**Split the words from a sentence.**
+
+```python
+>>> import re
+>>> sentence = "Python is an awesome programming language"
+>>> pattern = r"\W+"
+>>> search = re.compile(pattern)
+>>> search.split(sentence)
+['Python', 'is', 'an', 'awesome', 'programming', 'language']
+>>> 
+```
+
+**String substitution examples**
+
+```python
+import re
+
+DOB = "20-01-1991 # This is Date of Birth"
+
+# Delete Python-style comments
+Birth = re.sub (r'#.*$', "", DOB)
+print("Date of Birth : ", Birth)
+
+# Remove anything other than digits
+Birth1 = re.sub (r'\D', "", Birth)    
+print("Before substituting DOB : ", Birth1)
+
+# Substituting the '-' with '.(dot)'
+New=re.sub (r'\W',".",Birth)
+print("After substituting DOB: ", New)
+```
+
+**Examples for re.findall() function**
+
+```python
+import re
+
+line = "Python is a widely used high-level scripting language for general purpose programming, created by Guido van Rossum and first released in 1991"
+
+print("Find all words starts with p")
+print(re.findall(r"\bp[\w]*",line, re.I))
+print()
+
+print("Find all five characters long words")
+print(re.findall(r"\b\w{5}\b", line))
+print()
+
+# Find all four, six characters long words
+print("find all 4, 6 char long words")
+print(re.findall(r"\b\w{4,6}\b", line))
+print()
+
+# Find all words which are at least 13 characters long
+print("Find all words with 13 char")
+print(re.findall(r"\b\w{13,}\b", line))
+print()
+```
 <a href="#toc">[Back to TOC]</a><br><br>
 <a name="modules_and_packages">
 
